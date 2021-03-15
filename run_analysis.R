@@ -38,3 +38,5 @@ colnames(data) <- gsub("-", " ", names(data))
 secondDataSet = data %>% group_by(`Subject Number`, `Activity Label`) %>% summarise(across(everything(), list(mean)))
 
 rm(features, testLabels, testSubjects, testTable, trainTable, trainSubjects, trainLabels, activities)
+
+write.table(secondDataSet, file="SecondDataSet.txt", row.name = FALSE)
